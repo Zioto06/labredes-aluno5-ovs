@@ -8,7 +8,7 @@ O `VM_SW1` atua como switch virtual baseado em Open vSwitch, realizando a criaç
 
 A imagem abaixo apresenta o mapeamento das interfaces Linux do `VM_SW1`, seus respectivos endereços MAC e a rede correspondente no OpenStack.
 
-![Mapeamento de interfaces da VM\_SW1](docs/VM_SW1_interfaces.png)
+![Mapeamento de interfaces da VM\_SW1](/docs/VM_SW1_interfaces.png)
 
 ## Estrutura da pasta
 
