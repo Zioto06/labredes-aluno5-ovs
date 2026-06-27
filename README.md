@@ -43,11 +43,11 @@ Cada switch virtual possui um conjunto específico de interfaces Linux associada
 
 ### VM_SW1
 
-![Mapeamento de interfaces da VM\_SW1](docs/VM_SW1-interfaces.png)
+![Mapeamento de interfaces da VM\_SW1](/docs/VM_SW1_interfaces.png)
 
 ### VM_SW2
 
-![Mapeamento de interfaces da VM\_SW2](docs/VM_SW2-interfaces.png)
+![Mapeamento de interfaces da VM\_SW2](/docs/VM_SW2_interfaces.png)
 
 ---
 
