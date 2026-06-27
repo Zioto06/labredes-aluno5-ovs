@@ -1,31 +1,12 @@
-#!/usr/bin/env bash
-set -euo pipefail
+#!/bin/bash
 
-# Configuração dos links trunk do VM_SW1.
+# Configuração dos links trunk do VM_SW1
 # ens8  = FIREWALL_1
 # ens13 = TRUNK_INTER_SW
-# ens5  = VM4_MIRROR / saída de espelhamento para VM4
+# ens5  = VM4_MIRROR
 
-BRIDGE="br-int"
-VLANS="10,20,30,40,50,60"
+sudo ip link set ens8 up && sudo ovs-vsctl add-port br-int ens8 && sudo ovs-vsctl set port ens8 trunks=10,20,30,40,50,60
 
-echo "[VM_SW1] Configurando portas trunk..."
+sudo ip link set ens13 up && sudo ovs-vsctl add-port br-int ens13 && sudo ovs-vsctl set port ens13 trunks=10,20,30,40,50,60
 
-for IFACE in ens8 ens13 ens5; do
-  echo "[VM_SW1] Configurando $IFACE como trunk..."
-
-  sudo ip link set "$IFACE" up
-
-  sudo ovs-vsctl --may-exist add-port "$BRIDGE" "$IFACE"
-
-  # Remove configurações anteriores de access, caso existam
-  sudo ovs-vsctl clear Port "$IFACE" tag || true
-  sudo ovs-vsctl clear Port "$IFACE" vlan_mode || true
-
-  # Define VLANs permitidas no trunk
-  sudo ovs-vsctl set Port "$IFACE" trunks="$VLANS"
-done
-
-echo "[VM_SW1] Portas trunk configuradas com sucesso."
-
-sudo ovs-vsctl show
+sudo ip link set ens5 up && sudo ovs-vsctl add-port br-int ens5 && sudo ovs-vsctl set port ens5 trunks=10,20,30,40,50,60
