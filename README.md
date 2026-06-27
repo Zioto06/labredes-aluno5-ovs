@@ -55,6 +55,7 @@ Cada switch virtual possui um conjunto específico de interfaces Linux associada
 
 ```text
 labredes-aluno5-ovs/
+├── Trabalho_LabRedes.pdf
 ├── README.md
 ├── docs/
 │   ├── Topologia.png
